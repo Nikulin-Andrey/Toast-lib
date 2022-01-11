@@ -1,0 +1,18 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<title>Toast</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m-75-880h768v1080h-768z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: #ffffff } 
+	</style>
+	<g id="Toast" clip-path="url(#cp1)">
+		<g id="success">
+			<path id="Path 9" fill-rule="evenodd" class="s0" d="m64 32c0 17.65-14.36 32-32 32c-17.64 0-32-14.35-32-32c0-17.65 14.36-32 32-32c17.64 0 32 14.35 32 32zm-2.46 0c0-16.29-13.25-29.54-29.54-29.54c-16.29 0-29.54 13.25-29.54 29.54c0 16.29 13.25 29.54 29.54 29.54c16.29 0 29.54-13.25 29.54-29.54z" />
+			<path id="Path 10" class="s0" d="m51.52 20.88c0.59 0.37 0.64 1 0.12 1.41l-22.86 18c-0.28 0.22-0.67 0.34-1.07 0.34c-0.31 0-0.63-0.07-0.89-0.22l-14.29-8c-0.62-0.35-0.72-0.97-0.22-1.41c0.49-0.43 1.39-0.5 2.01-0.16l13.23 7.41l21.96-17.29c0.53-0.41 1.43-0.45 2.02-0.08z" />
+		</g>
+	</g>
+</svg>
