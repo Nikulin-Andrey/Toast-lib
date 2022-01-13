@@ -3,10 +3,13 @@ import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import external from 'rollup-plugin-peer-deps-external'
 import alias from '@rollup/plugin-alias'
+import svg from 'rollup-plugin-svg'
+import commonjs from '@rollup/plugin-commonjs'
+import filesize from 'rollup-plugin-filesize'
 
 export default [
   {
-    input: '@/index',
+    input: 'src/index',
     output: [
       {
         file: 'dist/index.js',
@@ -25,6 +28,7 @@ export default [
           '@babel/preset-react',
           '@babel/preset-env',
         ],
+        runtimeHelpers: true,
         plugins: [
           '@babel/plugin-proposal-class-properties',
           'babel-plugin-styled-components',
@@ -36,10 +40,12 @@ export default [
         resolve: ['*', '.js', '.jsx'],
         entries: [{ find: '@', replacement: './src' }],
       }),
-
+      svg(),
       external(),
       resolve(),
-      terser(),
+      // terser(),
+      commonjs(),
+      filesize(),
     ],
   },
 ]

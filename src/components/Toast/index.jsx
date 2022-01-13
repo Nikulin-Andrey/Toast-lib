@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
 import closeWarning from '../../assets/closeWarning.svg'
 import close from '../../assets/close.svg'
@@ -41,7 +42,7 @@ export const Toast = ({
         <Image src={logo} size={currentTheme.logo} />
         <TextContainer textMargin={currentTheme.textMargin}>
           <Header largeText={currentTheme.largeText}>
-            Warning toast
+            {heading || `${type} toast`}
           </Header>
           {description && (
             <Description smallText={currentTheme.smallText}>
@@ -58,4 +59,16 @@ export const Toast = ({
       </RightContainer>
     </Container>
   )
+}
+
+Toast.propTypes = {
+  type: propTypes.oneOf([
+    'info',
+    'warning',
+    'error',
+    'success',
+  ]),
+  size: propTypes.oneOf(['sm', 'md', 'lg']),
+  heading: propTypes.string,
+  description: propTypes.string,
 }
