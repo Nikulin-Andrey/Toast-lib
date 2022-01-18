@@ -11,7 +11,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
-    "eslint:test": "eslint src --ext .js,.jsx"
+    "eslint:test": "eslint src --ext .js,.jsx",
+    "eslint:fix": "eslint --fix src --ext .js,.jsx"
   },
   "author": "Nikulin Andrey",
   "license": "ISC",

@@ -5,7 +5,7 @@ import { Container } from './components'
 
 export const ToastContainer = ({
   positionX = 'end',
-  positionY = 'end',
+  positionY = 'start',
   toastSize = 'md',
   padding = 10,
   infoColor,

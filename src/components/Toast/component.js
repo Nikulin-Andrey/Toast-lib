@@ -1,13 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 
-const fadeIn = keyframes`
+const goDown = keyframes`
   0% {
-    opacity: 0;
-    margin-top: -1000px
+    margin-top: -200px;
   }
   100% {
-    opacity: 1;
-    margin-top: 20px;
+    margin-top: 0;
   }
 `
 
@@ -28,11 +26,14 @@ export const Container = styled.div`
   );
   margin: 0;
   margin-bottom: 10px;
-  animation: 1s ${fadeIn} ease-out;
+  animation: 1s ${(props) => props.animation} ease-out;
   &.delete {
     transition: margin 1s, opacity 1s;
     opacity: 0;
     margin-top: -140px;
+  }
+  &.onStage {
+    animation: 0.5s ${goDown} ease-out;
   }
 `
 

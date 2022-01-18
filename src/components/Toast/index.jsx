@@ -7,7 +7,9 @@ import {
   getCurrentColors,
   getCurrentSizes,
   getCurrentLogo,
+  getCurrentAnimation,
 } from '@/helpers/themeFromProps'
+import { INFO, MEDIUM, FROM_TOP } from '@/constants'
 import { deleteToastEvent } from '@/helpers/toastEvents'
 
 import {
@@ -21,8 +23,9 @@ import {
 } from './component'
 
 export const Toast = ({
-  type = 'warning',
-  size = 'md',
+  type = INFO,
+  animation = FROM_TOP,
+  size = MEDIUM,
   heading,
   description,
   id,
@@ -36,9 +39,9 @@ export const Toast = ({
   const logo = getCurrentLogo(type)
 
   const onDelete = (e) => {
-    const contaner = e.target.parentElement.parentElement
-    if (!contaner.classList.contains('delete')) {
-      const id = contaner.id
+    const container = e.target.parentElement.parentElement
+    if (!container.classList.contains('delete')) {
+      const id = container.id
       deleteToastEvent(id, 'click')
     }
   }
@@ -50,6 +53,7 @@ export const Toast = ({
       padding={currentTheme.padding}
       textColor={textColor || currentTheme.textColor}
       id={id}
+      animation={getCurrentAnimation(animation)}
       className={type}>
       <LeftContainer padding={currentTheme.padding}>
         <Image src={logo} size={currentTheme.logo} />
@@ -89,4 +93,5 @@ Toast.propTypes = {
   description: propTypes.string,
   color: propTypes.string,
   textColor: propTypes.string,
+  animation: propTypes.string,
 }

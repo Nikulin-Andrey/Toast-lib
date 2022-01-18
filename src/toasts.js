@@ -14,15 +14,16 @@ class Toasts {
     return this
   }
 
-  setContainer(container) {
+  setContainer() {
     this.container = document.getElementById(
       'toastContainer',
     )
   }
 
   addToast({
-    type = 'info',
-    size = 'md',
+    type,
+    size,
+    animation,
     heading,
     description,
     color,
@@ -33,6 +34,7 @@ class Toasts {
     this.toasts.push({
       type,
       size,
+      animation,
       heading,
       description,
       color,
@@ -43,6 +45,11 @@ class Toasts {
         lifeTime,
       ),
     })
+    if (this.container.lastElementChild) {
+      this.container.lastElementChild.classList.add(
+        'onStage',
+      )
+    }
     renderToasts(
       getToastComponents(this.toasts),
       this.container,
@@ -51,7 +58,7 @@ class Toasts {
 
   deleteToast(id, typeOfDelete) {
     const index = this.toasts.findIndex(
-      (toast) => toast.id === id,
+      (toast) => toast.id === Number(id),
     )
     const deleted = this.toasts.splice(index, 1)
     if (typeOfDelete === 'click') {
@@ -73,5 +80,5 @@ class Toasts {
 }
 
 const toasts = new Toasts()
-//Object.freeze(toasts)
+// Object.freeze(toasts)
 export default toasts

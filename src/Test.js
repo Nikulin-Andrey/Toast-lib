@@ -6,7 +6,7 @@ import { toastMaker } from './toastMaker'
 
 export const Test = ({
   positionX = 'end',
-  positionY = 'end',
+  positionY = 'start',
   toastSize = 'sm',
 }) => {
   const toastSome = () => {
@@ -15,6 +15,7 @@ export const Test = ({
       heading: 'warning test',
       description: `descriptiondescriptescriptiondescriptio
         ndescriptiondescriptiondescription`,
+      animation: 'fromRight',
     }
     toastMaker(toast)
   }

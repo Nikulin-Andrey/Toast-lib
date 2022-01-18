@@ -5,7 +5,7 @@ export const toastMaker = (
   lifeTime = 5000,
 ) => {
   toasts.setContainer()
-  const size = toasts.container.dataset.size
+  const {size} = toasts.container.dataset
   const id = Math.random() * 10000
   toasts.addToast({
     ...toastParameters,
