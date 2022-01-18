@@ -3,9 +3,15 @@ import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import external from 'rollup-plugin-peer-deps-external'
 import alias from '@rollup/plugin-alias'
-import svg from 'rollup-plugin-svg'
+import image from '@rollup/plugin-image'
 import commonjs from '@rollup/plugin-commonjs'
 import filesize from 'rollup-plugin-filesize'
+
+const path = require('path')
+const customResolver = resolve({
+  extensions: ['*', '.js', '.jsx'],
+})
+const projectRootDir = path.resolve(__dirname)
 
 export default [
   {
@@ -38,9 +44,18 @@ export default [
       }),
       alias({
         resolve: ['*', '.js', '.jsx'],
-        entries: [{ find: '@', replacement: './src' }],
+        entries: [
+          {
+            find: '@',
+            replacement: path.resolve(
+              projectRootDir,
+              'src',
+            ),
+            customResolver,
+          },
+        ],
       }),
-      svg(),
+      image(),
       external(),
       resolve(),
       // terser(),

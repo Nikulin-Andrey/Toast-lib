@@ -1,7 +1,10 @@
 {
-  "extends": ["standard", "standard-react", "prettier", "prettier/react"],
+  "extends": ["standard", "standard-react", "prettier"],
   "plugins": ["prettier", "react-hooks", "cypress"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "env": {
     "node": true,
     "browser": true,
@@ -9,7 +12,7 @@
     "cypress/globals": true
   },
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
     "semi": "error",
     "prefer-destructuring": "error",
     "max-len": [

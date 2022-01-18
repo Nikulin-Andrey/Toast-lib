@@ -2,8 +2,9 @@ import warning from '../assets/warning.svg'
 import info from '../assets/info.svg'
 import error from '../assets/error.svg'
 import success from '../assets/success.svg'
+import * as theme from '@/theme'
 
-export const getCurrentColors = (theme, type) => {
+export const getCurrentColors = (type) => {
   switch (type) {
     case 'info':
       return theme.infoToastColors
@@ -16,7 +17,7 @@ export const getCurrentColors = (theme, type) => {
   }
 }
 
-export const getCurrentSizes = (theme, size) => {
+export const getCurrentSizes = (size) => {
   switch (size) {
     case 'sm':
       return theme.smallSizes

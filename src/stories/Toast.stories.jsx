@@ -1,10 +1,9 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
-import { Toast } from '../components/Toast'
+import { Toast } from '@/components/Toast'
 
 export default {
-  title: 'Toast',
+  title: 'Components/Toast',
   component: Toast,
 }
 
