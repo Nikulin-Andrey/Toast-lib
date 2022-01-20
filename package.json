@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "publishConfig": {
+    "Nikulin-Andrey:registry": "https://npm.pkg.github.com"
+  },
   "files": [
     "dist"
   ],
